@@ -1,8 +1,6 @@
 <html>
     <body>
         <?php
-            include 'insert.inc';
-
             $username = $_POST["al-username"];
             $password = $_POST["al-password"];
 
@@ -20,6 +18,8 @@
                 header("Location: http://aceling.wz.cz/log_in.php?wrong_password=1", true, 301);
                 exit();
             }
+
+            include 'insert.inc';
 
         ?>
     </body>
