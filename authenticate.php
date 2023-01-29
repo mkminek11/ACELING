@@ -1,6 +1,8 @@
 <html>
     <body>
         <?php
+            session_start();
+
             $username = $_POST["al-username"];
             $password = $_POST["al-password"];
 
@@ -10,17 +12,16 @@
             $res = mysqli_fetch_array(mysqli_query($conn, "SELECT DISTINCT * FROM users WHERE name=\"$username\" AND password=\"$password\""));
 
             if ($res) {
-                echo "Welcome back, $username!";
                 $_SESSION['valid'] = true;
-                $_SESSION['timeout'] = time();              // times out after 24 h
                 $_SESSION['username'] = $username;
+
+                include 'insert.inc';
+
+                echo "Vítej zpět, $username!";
             } else {
                 header("Location: http://aceling.wz.cz/log_in.php?wrong_password=1", true, 301);
                 exit();
             }
-
-            include 'insert.inc';
-
         ?>
     </body>
 </html>

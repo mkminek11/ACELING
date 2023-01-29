@@ -1,6 +1,6 @@
 <?php
-
-echo '<div id="lista" class="lista"><nav><ul>
+session_start();
+echo '<div id="lista" class="lista"><nav><ul>'.$_SESSION["username"].'
 
         <li><a href="index.php">Domů</a></li>
         <li><a href="search.php">Search</a></li>
@@ -10,7 +10,7 @@ echo '<div id="lista" class="lista"><nav><ul>
         <li class="center"><a href="index.php" class="logo"><img src="logo.png" height="50"></a></li>'.(($_SESSION["valid"] == false) ? '
 
         <li class="right"><a href="log_in.php">Přihlásit se</a><img src="user.png" height="30"></li>
-        <li class="right"><a href="signin.php">Registrovat se</a></li>
+        <li class="right"><a href="sign_up.php">Registrovat se</a></li>
         
         ':'
         

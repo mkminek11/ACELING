@@ -1,5 +1,6 @@
 <html>
     <body>
+        <?php include "insert.inc"; ?>
         <div class="form">
             <form method="POST" action="authenticate.php">
                 <table>
