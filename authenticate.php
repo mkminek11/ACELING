@@ -1,8 +1,6 @@
 <html>
     <body>
         <?php
-            session_start();
-
             $username = $_POST["al-username"];
             $password = $_POST["al-password"];
 
@@ -12,10 +10,12 @@
             $res = mysqli_fetch_array(mysqli_query($conn, "SELECT DISTINCT * FROM users WHERE name=\"$username\" AND password=\"$password\""));
 
             if ($res) {
+                session_start();
                 $_SESSION['valid'] = true;
                 $_SESSION['username'] = $username;
 
                 include 'insert.inc';
+                insert_list($_SESSION);
 
                 echo "Vítej zpět, $username!";
             } else {

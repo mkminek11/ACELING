@@ -60,7 +60,7 @@
             }
 
             function save() {
-                address = "save_set.php?name="+get_val("name")+"&lang="+get_val("lang");
+                address = "save_set.php?n="+get_val("name")+"&l="+get_val("lang")+"&u="+get_user();
                 i = document.getElementById("content").children;
                 for (x = 0; x < i.length; x ++) {
                     address += "&";
@@ -87,10 +87,14 @@
                 if (document.getElementById("name") == "") {return;}
                 save();
             }
+
+            function get_user() {
+                return document.getElementById("username").value;
+            }
         </script>
         <div id="content" name="content">
         </div>
-        <!-- <?php include "insert.inc"; ?> -->
+        <?php include "insert.inc"; $user = $_SESSION["username"]; echo "<input type='hidden' id='username' value='$user'>"; ?>
         <button onclick="add()">+</button>
         <button onclick="check()">Done</button>
     </body>
