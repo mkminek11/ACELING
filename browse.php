@@ -3,11 +3,11 @@
         <meta charset="utf-8">
     </head>
     <body>
+        <form action="search.php"><input type="text" id="q" name="q"><button type="submit">OK</button></form>
+        <h1>Or browse:</h1>
         <?php
-        $name = $_GET["q"];
-
         $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
-        $sets = mysqli_query($conn, "SELECT * FROM `sets` WHERE name LIKE '%$name%'");
+        $sets = mysqli_query($conn, "SELECT * FROM `sets`");
         // foreach ($sets as $set) {
             // echo $set;
         // }

@@ -4,7 +4,7 @@ function insert_list($session) {
     echo '<div id="lista" class="lista"><nav><ul>'.$session["username"].'
 
         <li><a href="index.php">Domů</a></li>
-        <li><a href="search.php">Search</a></li>
+        <li><a href="browse.php">Search</a></li>
         <li><a href="settings.php">Settings</a></li>
         <li><a href="create.php">Create</a></li>
 
