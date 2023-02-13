@@ -20,7 +20,7 @@
         while($set = mysqli_fetch_assoc($sets)) {
             $name = $set["name"];
             $id = $set["id"];
-            echo '<a href="set.php?i='.$id.'"><div style="width: 100px; height: 100px; border: 2px solid black; border-radius: 5px; margin: 10px;">'.$name.'</div></a>';
+            echo '<a href="set.php?i='.$id.'&back='.htmlentities("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]").'"><div style="width: 100px; height: 100px; border: 2px solid black; border-radius: 5px; margin: 10px;">'.$name.'</div></a>';
         }
         ?>
     </body>

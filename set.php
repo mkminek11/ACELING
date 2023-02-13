@@ -13,8 +13,9 @@
         insert_list($_SESSION);
         
         $id = $_GET["i"];
+        $back = $_GET["back"];
 
-        echo "<ul><li><a href='cards.php?i=$id'>Karty</a></li></ul>";
+        echo "<ul><li><a href='cards.php?i=$id'>Cards</a></li><li><a href='$back'>Back to Search</a></li></ul>";
         
         $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
         $words = mysqli_query($conn, "SELECT * FROM `$id`");

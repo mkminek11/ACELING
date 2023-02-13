@@ -2,7 +2,7 @@
     <body>
         <?php
             include 'insert.inc';
-                insert_list($_SESSION);
+            insert_list($_SESSION);
 
             $username = $_POST["al-username"];
             $password = $_POST["al-password"];

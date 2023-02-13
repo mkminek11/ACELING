@@ -17,7 +17,7 @@
                 include 'insert.inc';
                 insert_list($_SESSION);
 
-                echo "Vítej zpět, $username!";
+                echo "Welcome back, $username!";
             } else {
                 header("Location: http://aceling.wz.cz/log_in.php?wrong_password=1", true, 301);
                 exit();
