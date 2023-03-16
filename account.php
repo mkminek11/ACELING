@@ -3,7 +3,8 @@
         <?php
         include "insert.inc";
         session_start();
-        $name = $_SESSION["username"];
+        $id = $_SESSION["user"];
+        $name = get_user($id);
         echo "You are $name.";
 
         ?>

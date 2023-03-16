@@ -35,9 +35,9 @@
             $x += 1;
         }
 
-        if ($_SESSION["username"] == $set["creator"]) {
+        if ((string) $_SESSION["user"] == (string) $set["creator"]) {
             echo "<button>DELETE</button>";
-            echo "<button>EDIT</button>";
+            echo "<button onclick='location.assign(\"edit_set.php\")'>EDIT</button>";
         }
 
         ?>

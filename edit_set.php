@@ -3,18 +3,6 @@
         <meta charset="utf-8">
     </head>
     <body>
-        Vyber základní jazyk:
-        <select>
-            <option>Čeština</option>
-            <option>Angličtina</option>
-        </select>
-        Vyber druhý jazyk:
-        <select id="lang">
-            <option>AJ</option>
-            <option>NJ</option>
-        </select>
-        Název:
-        <input type="text" id="name">
         <script>
             function add() {
                 var id = document.getElementById("content").childElementCount.toString();
@@ -90,10 +78,46 @@
                 return document.getElementById("username").value;
             }
         </script>
-        <div id="content" name="content">
-        </div>
-        <?php include "insert.inc"; $user = $_SESSION["username"]; echo "<input type='hidden' id='username' value='$user'>"; ?>
+        <?php 
+            include "insert.inc";
+            insert_list($_SESSION);
+        ?>
+        <?php
+            $id = $_GET["i"];
+
+            $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
+            $words = mysqli_query($conn, "SELECT * FROM `$id`");
+            $set = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `sets` WHERE id='$id'"));
+        
+            echo "Select the main language:
+            <select>
+                <option>Czech (Čeština)</option>
+                <option>English</option>
+            </select>
+            Select the second language:
+            <select id='lang'>
+                <option>English</option>
+                <option>German (Deutsch)</option>
+            </select>
+            Title:
+            <input type='text' id='al-title'>";
+
+            $i = 0;
+            while ($w = mysqli_fetch_array($words)) {
+                // print_r($w);
+                $phrase = $w[1];
+                $translation = $w[2];
+                $image = $w[3];
+                $name = (string) $i;
+                echo "<div style='border: 2px solid black;'>
+                Fráze:   <input type='text' id='".$name."phrase'      name='".$name."phrase'      value='$phrase'><br>
+                Překlad: <input type='text' id='".$name."translation' name='".$name."translation' value='$translation'><br>
+                Obrázek: <input type='text' id='".$name."image'       name='".$name."image'       value='$image'></div>";
+                $i ++;
+            }
+        ?>
+        <div id="content" name="content"></div>
         <button onclick="add()">+</button>
-        <button onclick="check()">Done</button>
+        <button onclick="check()">Save</button>
     </body>
 </html>

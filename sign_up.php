@@ -1,6 +1,5 @@
 <html>
     <body>
-        <?php include "insert.inc"; insert_list($_SESSION); ?>
         <div class="form">
             <form method="POST" action="create_account.php">
                 <table>

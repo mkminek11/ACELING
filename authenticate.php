@@ -11,8 +11,9 @@
 
             if ($res) {
                 session_start();
-                $_SESSION['valid'] = true;
-                $_SESSION['username'] = $username;
+                // print_r($res["id"]);
+                $_SESSION["valid"] = true;
+                $_SESSION["user"] = (int) $res["id"];
 
                 include 'insert.inc';
                 insert_list($_SESSION);

@@ -6,11 +6,11 @@
         include "insert.inc";
         insert_list($_SESSION);
 
-        $username = $_SESSION["username"];
+        $user = $_SESSION["user"];
 
         if ($_SESSION["valid"] == true) {
             $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
-            $sets = mysqli_query($conn, "SELECT * FROM `sets` WHERE creator='$username'");
+            $sets = mysqli_query($conn, "SELECT * FROM `sets` WHERE creator='$user'");
             if (mysqli_num_rows($sets) > 0) {
                 echo "<h2>Your sets:</h2>";
                 while ($set = mysqli_fetch_array($sets)) {

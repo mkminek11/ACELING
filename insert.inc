@@ -1,7 +1,15 @@
 <?php
+
+function get_user($id) {
+    $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
+    $id = (string) $id;
+    $res = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `users` WHERE id=$id"));
+    // var_dump("SELECT * FROM `users` WHERE id=$id");
+    return $res;
+}
 session_start();
 function insert_list($session) {
-    echo '<div id="lista" class="lista"><nav><ul>'.$session["username"].'
+    echo '<div id="lista" class="lista"><nav><ul>
 
         <li><a href="home.php">Home</a></li>
         <li><a href="search.php">Search</a></li>
@@ -15,12 +23,11 @@ function insert_list($session) {
 
         ':'
 
-        <li class="right"><a href="account.php">Account</a> ('.$session["username"].')</li>
+        <li class="right"><a href="account.php">Account</a> ('.get_user($session["user"])["name"].')</li>
         <li class="right"><a href="log_out.php">Log out</a></li>
 
         ').'
 
         </ul></nav></div><hr>';
     }
-
 ?>
