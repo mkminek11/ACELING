@@ -3,17 +3,17 @@
         <meta charset="utf-8">
     </head>
     <body>
-        Vyber základní jazyk:
+        Select primary language:
         <select>
-            <option>Čeština</option>
-            <option>Angličtina</option>
+            <option value="cs">Czech (Čeština)</option>
+            <option value="en">English</option>
         </select>
-        Vyber druhý jazyk:
+        Select second language:
         <select id="lang">
-            <option>AJ</option>
-            <option>NJ</option>
+            <option value="en">English</option>
+            <option value="de">German (Deutsch)</option>
         </select>
-        Název:
+        Title:
         <input type="text" id="name">
         <script>
             function add() {
@@ -87,12 +87,12 @@
             }
 
             function get_user() {
-                return document.getElementById("username").value;
+                return document.getElementById("user").value;
             }
         </script>
         <div id="content" name="content">
         </div>
-        <?php include "insert.inc"; $user = $_SESSION["username"]; echo "<input type='hidden' id='username' value='$user'>"; ?>
+        <?php include "insert.inc"; $user = $_SESSION["user"]; echo "<input type='hidden' id='user' value='$user'>"; ?>
         <button onclick="add()">+</button>
         <button onclick="check()">Done</button>
     </body>

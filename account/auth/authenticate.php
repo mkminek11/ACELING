@@ -14,11 +14,9 @@
                 // print_r($res["id"]);
                 $_SESSION["valid"] = true;
                 $_SESSION["user"] = (int) $res["id"];
-
-                include 'insert.inc';
-                insert_list($_SESSION);
-
-                echo "Welcome back, $username!";
+                header("Location: http://aceling.wz.cz/home.php", true, 301);
+                exit();
+                
             } else {
                 header("Location: http://aceling.wz.cz/log_in.php?wrong_password=1", true, 301);
                 exit();

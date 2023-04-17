@@ -4,7 +4,6 @@ function get_user($id) {
     $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
     $id = (string) $id;
     $res = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `users` WHERE id=$id"));
-    // var_dump("SELECT * FROM `users` WHERE id=$id");
     return $res;
 }
 session_start();

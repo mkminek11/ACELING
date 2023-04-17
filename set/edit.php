@@ -1,35 +1,33 @@
 <html>
     <head>
         <meta charset="utf-8">
-    </head>
-    <body>
         <script>
             function add() {
                 var id = document.getElementById("content").childElementCount.toString();
 
                 var newField = document.createElement('div');
                 newField.setAttribute('style','border: 2px solid black;');
-
+                
                 var phrase_label = document.createTextNode('Fráze: ');
                 var phrase_entry = document.createElement('input');
                 phrase_entry.setAttribute('type','text');
                 phrase_entry.setAttribute('id',id+'phrase');
                 phrase_entry.setAttribute('name',id+'phrase');
                 var phrase_break = document.createElement('br');
-
+                
                 var translation_label = document.createTextNode('Překlad: ');
                 var translation_entry = document.createElement('input');
                 translation_entry.setAttribute('type','text');
                 translation_entry.setAttribute('id',id+'translation');
                 translation_entry.setAttribute('name',id+'translation');
                 var translation_break = document.createElement('br');
-
+                
                 var image_label = document.createTextNode('Obrázek: ');
                 var image_entry = document.createElement('input');
                 image_entry.setAttribute('type','text');
                 image_entry.setAttribute('id',id+'image');
                 image_entry.setAttribute('name',id+'image');
-
+                
                 document.getElementById("content").appendChild(newField);
                 newField.appendChild(phrase_label);
                 newField.appendChild(phrase_entry);
@@ -40,7 +38,7 @@
                 newField.appendChild(image_label);
                 newField.appendChild(image_entry);
             }
-
+            
             function get_val(id) {
                 return encodeURIComponent(document.getElementById(id).value);
             }
@@ -73,11 +71,13 @@
                 if (document.getElementById("name") == "") {return;}
                 save();
             }
-
+            
             function get_user() {
                 return document.getElementById("username").value;
             }
         </script>
+    </head>
+    <body>
         <?php 
             include "insert.inc";
             insert_list($_SESSION);
@@ -88,6 +88,7 @@
             $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
             $words = mysqli_query($conn, "SELECT * FROM `$id`");
             $set = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `sets` WHERE id='$id'"));
+            echo $set;
         
             echo "Select the main language:
             <select>
