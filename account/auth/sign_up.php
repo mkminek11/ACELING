@@ -1,13 +1,18 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="http://aceling.wz.cz/form.css">
+    </head>
     <body>
-        <div class="form">
+        <div class="blue-bg"></div>
+        <div class="content form">
+            <h2>Sign up</h2>
             <form method="POST" action="create_account.php">
                 <table>
-                    <tr><td>Přezdívka: </td><td><input type="text"     name="al-username"  autocomplete="al-username" required></td></tr>
+                    <tr><td>Username:  </td><td><input type="text"     name="al-username"  autocomplete="al-username" required></td></tr>
                     <tr><td>E-mail:    </td><td><input type="email"    name="al-email"     autocomplete="al-email"    required></td></tr>
-                    <tr><td>Heslo:     </td><td><input type="password" name="al-password"  autocomplete="al-password" required></td></tr>
-                    <tr><td colspan="2"><input type="submit" value="OK"></td></tr>
+                    <tr><td>Password:  </td><td><input type="password" name="al-password"  autocomplete="al-password" required></td></tr>
                 </table>
+                <input type="submit" value="OK">
             </form>
             <?php
             if (isset($_GET["existing_name"])) {

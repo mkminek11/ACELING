@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel="stylesheet" href="http://aceling.wz.cz/default.css">
     </head>
     <body>
         <?php
