@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -92,7 +93,7 @@
         </script>
         <div id="content" name="content">
         </div>
-        <?php include "insert.inc"; $user = $_SESSION["user"]; echo "<input type='hidden' id='user' value='$user'>"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT']."/insert.inc"; $user = $_SESSION["user"]; echo "<input type='hidden' id='user' value='$user'>"; ?>
         <button onclick="add()">+</button>
         <button onclick="check()">Done</button>
     </body>

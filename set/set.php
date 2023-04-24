@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,7 +10,7 @@
     </head>
     <body>
         <?php
-        include "insert.inc";
+        include $_SERVER['DOCUMENT_ROOT']."/insert.inc";
         insert_list($_SESSION);
         
         $id = $_GET["i"];
@@ -37,7 +38,7 @@
 
         if ((string) $_SESSION["user"] == (string) $set["creator"]) {
             echo "<button>DELETE</button>";
-            echo "<button onclick='location.assign(\"edit_set.php\")'>EDIT</button>";
+            echo "<button onclick='location.assign(\"edit.php\")'>EDIT</button>";
         }
 
         ?>

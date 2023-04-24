@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
     <head>
     </head>
     <body>
         <?php
-        include "insert.inc";
+        include $_SERVER['DOCUMENT_ROOT']."/insert.inc";
         insert_list($_SESSION);
 
         echo "<h2>Change password:</h2>";

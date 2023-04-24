@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -79,7 +80,7 @@
     </head>
     <body>
         <?php 
-            include "insert.inc";
+            include $_SERVER['DOCUMENT_ROOT']."/insert.inc";
             insert_list($_SESSION);
         ?>
         <?php

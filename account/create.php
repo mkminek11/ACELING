@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
     <body>
         <?php
-            include 'insert.inc';
+            include $_SERVER['DOCUMENT_ROOT']."/insert.inc";
             insert_list($_SESSION);
 
             $username = $_POST["al-username"];
