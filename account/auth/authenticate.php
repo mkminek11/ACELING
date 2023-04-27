@@ -19,7 +19,7 @@
                 exit();
                 
             } else {
-                header("Location: http://aceling.wz.cz/log_in.php?wrong_password=1", true, 301);
+                header("Location: http://aceling.wz.cz/account/auth/log_in.php?wrong_password=1", true, 301);
                 exit();
             }
         ?>

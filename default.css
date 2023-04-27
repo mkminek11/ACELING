@@ -1,21 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700&family=Montserrat:wght@300;500;600&family=Oxygen:wght@300;700&display=swap');
-
-* {
-    font-family: "Montserrat", sans-serif;
-    user-select: none;
-}
-
-body {
+h2 {
+    padding: 0px;
     margin: 0px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    position: absolute;
-    top: 0px;
 }
 
 .content {
-    margin: 0px 10px;
+    /* position: absolute;
+    top: 80px;
+    bottom: 24px;
+    left: 24px;
+    right: 24px; */
+    width: calc(100% - 48px);
+    height: calc(100% - 104px);
+    padding: 15px;
+    margin: 80px 24px 24px 24px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    height: 30px;
+    background-color: #2484d3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 1s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    transition: background-color 0.5s ease;
+    background-color: #1c639c;
+}
+
+table {
+    width: 300px;
+}
+
+tr {
+    height: 40px;
 }
 
 .mlanguage, .mset {
@@ -23,41 +47,7 @@ body {
     border-radius: 5px;
 }
 
-.content ~ * {               /* hide the ads as much as possible */
-    visibility: hidden;
-    display: none;
-    opacity: 0;
-}
-
-/*   LISTA   */
-
-div#lista {
-    margin: 0px;
-    width: 100%;
-    height: fit-content;
-}
-
-nav {
-    padding: 10px 20px;
-    background-color: #333333;
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    color: white;
-}
-
-.right {
-    margin-left: auto;
-}
-
-nav div {
-    margin: 0px;
-    margin-right: 20px;
-}
-
-nav div a {
-    font-size: x-large;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
+.material-symbols-rounded {
+    position: relative;
+    top: 3px;
 }

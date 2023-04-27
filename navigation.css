@@ -1,0 +1,42 @@
+div#navigation {
+    margin: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: fit-content;
+}
+
+nav {
+    padding: 10px 20px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    color: black;
+}
+
+.right {
+    margin-left: auto;
+}
+
+nav div {
+    margin: 0px;
+    margin-right: 40px;
+    height: 36px;
+}
+
+nav div a {
+    font-size: x-large;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    height: 100%;
+    margin: 0px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+nav div a img {
+    height: 36px;
+}

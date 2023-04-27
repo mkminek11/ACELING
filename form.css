@@ -1,40 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700&family=Montserrat:wght@300;600&family=Oxygen:wght@300;700&display=swap');
 
-* {
-    font-family: "Montserrat", sans-serif;
-    font-size: large;
-    user-select: none;
-}
-
-body {
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.earth-bg {
-    background-image: url("http://aceling.wz.cz/images/earth_background.png");
-    background-size: cover;
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.blue-bg {
-    /* background-color: #1c639c; */
-    background-image: url("http://aceling.wz.cz/images/blue.jpg");
-    background-size: cover;
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
 .content {
     position: absolute;
     top: 50%;
@@ -44,7 +9,6 @@ body {
     height: 450px;
     transform: translate(-50%, -50%);
     border-radius: 25px;
-    z-index: 2;
 }
 
 h2 {
@@ -55,19 +19,17 @@ h2 {
 }
 
 button, input[type=submit] {
-    box-sizing: border-box;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 2%;
-    margin-top: 2%;
-    height: 80px;
-    background-color: #2484d3;
     color: white;
-    border: none;
-    border-radius: 20px;
+    background-color: #2484d3;
     transition: background-color 1s ease;
+    width: 90%;
+    height: 80px;
+    border-radius: 20px;
+    border: none;
     font-weight: 600;
+    font-size: x-large;
+    margin: 2% 5%;
+    box-sizing: border-box;
 }
 
 button:hover, input[type=submit]:hover {
@@ -79,10 +41,7 @@ table {
     width: 100%;
     box-sizing: border-box;
     width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin: 2% 5%;
 }
 
 .language-icon {
@@ -116,12 +75,6 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
     background-color: #eaf6fd;
     border: 1px solid black;
     transition: background-color 0.5s ease, border 0.5s ease;
-}
-
-.content ~ * {               /* hide the ads as much as possible */
-    visibility: hidden;
-    display: none;
-    opacity: 0;
 }
 
 tr {

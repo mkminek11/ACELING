@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="http://aceling.wz.cz/default.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/all.css">
         <meta charset="utf-8">
         <script>
             function add() {
@@ -79,18 +81,18 @@
         </script>
     </head>
     <body>
-        <?php 
-            include $_SERVER['DOCUMENT_ROOT']."/insert.inc";
+        <?php
+            include_once("$_SERVER[DOCUMENT_ROOT]/insert.inc");
             insert_list($_SESSION);
         ?>
-        <?php
+        <div class="content">
+            <?php
             $id = $_GET["i"];
 
             $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
             $words = mysqli_query($conn, "SELECT * FROM `$id`");
             $set = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `sets` WHERE id='$id'"));
-            echo $set;
-        
+            
             echo "Select the main language:
             <select>
                 <option>Czech (Čeština)</option>
@@ -117,9 +119,11 @@
                 Obrázek: <input type='text' id='".$name."image'       name='".$name."image'       value='$image'></div>";
                 $i ++;
             }
-        ?>
-        <div id="content" name="content"></div>
-        <button onclick="add()">+</button>
-        <button onclick="check()">Save</button>
+            ?>
+            <div id="content" name="content"></div>
+            <button onclick="add()">+</button>
+            <button onclick="check()">Save</button>
+        </div>
+        <div class="blue-bg"></div>
     </body>
 </html>

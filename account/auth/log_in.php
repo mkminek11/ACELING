@@ -2,12 +2,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="http://aceling.wz.cz/form.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/all.css">
     </head>
     <body>
-        <div class="blue-bg"></div>
         <div class="content form">
             <h2>Log in</h2>
-            <form method="POST" action="authenticate.php">
+            <form method="POST" action="http://aceling.wz.cz/account/auth/authenticate.php">
                 <table>
                     <tr><td>Username: </td><td><input type="text"     name="al-username"  autocomplete="al-username" required></td></tr>
                     <tr><td>Password: </td><td><input type="password" name="al-password"  autocomplete="al-password" required></td></tr>
@@ -20,5 +20,6 @@
             }
             ?>
         </div>
+        <div class="blue-bg"></div>
     </body>
 </html>

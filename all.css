@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Oxygen:wght@300;700&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    user-select: none;
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+}
+
+.content ~ *:not(.blue-bg) {               /* hide the ads as much as possible */
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+
+.earth-bg {
+    background-image: url("http://aceling.wz.cz/images/earth_background.png");
+    background-size: cover;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: -1000;
+}
+
+.blue-bg {
+    /* background-color: #1c639c; */
+    background-image: url("http://aceling.wz.cz/images/blue.jpg");
+    background-size: cover;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    box-sizing: border-box;
+    z-index: -1000;
+}

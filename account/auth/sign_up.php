@@ -2,12 +2,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="http://aceling.wz.cz/form.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/all.css">
     </head>
     <body>
-        <div class="blue-bg"></div>
         <div class="content form">
             <h2>Sign up</h2>
-            <form method="POST" action="create_account.php">
+            <form method="POST" action="http://aceling.wz.cz/account/create.php">
                 <table>
                     <tr><td>Username:  </td><td><input type="text"     name="al-username"  autocomplete="al-username" required></td></tr>
                     <tr><td>E-mail:    </td><td><input type="email"    name="al-email"     autocomplete="al-email"    required></td></tr>
@@ -23,5 +23,6 @@
             }
             ?>
         </div>
+        <div class="blue-bg"></div>
     </body>
 </html>

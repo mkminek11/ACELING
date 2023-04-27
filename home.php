@@ -2,10 +2,12 @@
 <html>
     <head>
         <link rel="stylesheet" href="http://aceling.wz.cz/default.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/all.css">
     </head>
     <body>
         <?php
-            include $_SERVER['DOCUMENT_ROOT']."/insert.inc";
+            echo "insert.inc";
+            include "insert.inc";
             insert_list($_SESSION);
 
             $user = $_SESSION["user"];
@@ -35,12 +37,13 @@
                 while ($set = mysqli_fetch_array($sets)) {
                     $name = $set["name"];
                     $id = $set["id"];
-                    echo '<a href="http://aceling.wz.cz/set/set.php?i='.$id.'"><div class="mset">'.$name.'</div></a>';
+                    echo '<a href="http://aceling.wz.cz/set/set.php?i='.$id.'&back=http%3A%2F%2Faceling.wz.cz%2Fhome.php"><div class="mset">'.$name.'</div></a>';
                 }
             } else {
                 echo "You have no sets yet.";
             }
             ?>
         </div>
+        <div class="blue-bg"></div>
     </body>
 </html>
