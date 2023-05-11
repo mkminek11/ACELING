@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="http://aceling.wz.cz/default.css">
-        <link rel="stylesheet" href="http://aceling.wz.cz/all.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/style/default.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/style/all.css">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <?php
-            echo "insert.inc";
             include "insert.inc";
             insert_list($_SESSION);
 
@@ -14,17 +14,16 @@
             
             $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
             $sets = mysqli_query($conn, "SELECT * FROM `sets` WHERE creator='$user'");
-            $lang = mysqli_query($conn, "SELECT * FROM `user-language` WHERE user_id='$user'");
+            $lang = json_decode(mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `users` WHERE id='$user'"))["languages"]);
         ?>
 
         <div class="content">
             <?php
-
+            
             echo "<h2>Your languages:</h2>";
-            if (mysqli_num_rows($lang) > 0) {
-                while ($set = mysqli_fetch_array($lang)) {
-                    $language = $set["language_id"];
-                    echo '<a href="set.php"><div class="mlanguage">'.$language.'</div></a>';
+            if (count($lang)) {
+                foreach ($lang as $key => $value) {
+                    echo $value;
                 }
             } else {
                 echo 'You haven\'t chosen any language to learn. If you want to, click <a href="http://aceling.wz.cz/new_language.php">here</a>';
@@ -35,9 +34,9 @@
             echo "<h2>Your sets:</h2>";
             if (mysqli_num_rows($sets) > 0) {
                 while ($set = mysqli_fetch_array($sets)) {
-                    $name = $set["name"];
+                    $name = html_entity_decode($set["name"]);
                     $id = $set["id"];
-                    echo '<a href="http://aceling.wz.cz/set/set.php?i='.$id.'&back=http%3A%2F%2Faceling.wz.cz%2Fhome.php"><div class="mset">'.$name.'</div></a>';
+                    echo '<div class="mset"><a href="http://aceling.wz.cz/set/set.php?i='.$id.'&back=http%3A%2F%2Faceling.wz.cz%2Fhome.php">'.$name.'</a></div>';
                 }
             } else {
                 echo "You have no sets yet.";

@@ -4,11 +4,6 @@ h2 {
 }
 
 .content {
-    /* position: absolute;
-    top: 80px;
-    bottom: 24px;
-    left: 24px;
-    right: 24px; */
     width: calc(100% - 48px);
     height: calc(100% - 104px);
     padding: 15px;
@@ -19,7 +14,6 @@ h2 {
 }
 
 button {
-    display: block;
     height: 30px;
     background-color: #2484d3;
     color: white;
@@ -45,9 +39,22 @@ tr {
 .mlanguage, .mset {
     border: 1px solid #AAAAAA;
     border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+}
+
+.mlanguage a, .mset a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
 }
 
 .material-symbols-rounded {
     position: relative;
     top: 3px;
+}
+
+.radio {
+    display: block;
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="http://aceling.wz.cz/default.css">
-        <link rel="stylesheet" href="http://aceling.wz.cz/all.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/style/default.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/style/all.css">
         <meta charset="utf-8">
     </head>
     <body>

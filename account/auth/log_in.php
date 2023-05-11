@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="http://aceling.wz.cz/form.css">
-        <link rel="stylesheet" href="http://aceling.wz.cz/all.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/style/form.css">
+        <link rel="stylesheet" href="http://aceling.wz.cz/style/all.css">
     </head>
     <body>
         <div class="content form">
