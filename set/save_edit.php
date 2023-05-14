@@ -18,7 +18,8 @@ foreach ($_GET as $key => $value) {
 $set_data_json = json_encode($set);
 $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
 
-// echo "INSERT INTO `sets` (`name`, `lang`, `creator`, `data`) VALUES ('$set_name', '$set_lang', '$creator', '$set_data_json')";
+echo "UPDATE `sets` SET name='$set_name', lang='$set_lang', creator='$creator', data='$set_data_json' WHERE id='$set_id'";
+mysqli_query($conn, "UPDATE `sets` SET name='$set_name', lang='$set_lang', creator='$creator', data='$set_data_json' WHERE id='$set_id'");
 
-/*mysqli_query($conn, */echo "UPDATE `sets` SET name='$set_name', lang='$set_lang', creator='$creator', data='$set_data_json' WHERE id='$set_id'";
+
 ?>

@@ -14,13 +14,13 @@
         <div class="content">
             Select the main language:
             <select>
-                <option>Czech (Čeština)</option>
-                <option>English</option>
+                <option value="cs">Czech (Čeština)</option>
+                <option value="en">English</option>
             </select>
             Select the second language:
             <select id='lang'>
-                <option>English</option>
-                <option>German (Deutsch)</option>
+                <option value="en">English</option>
+                <option value="de">German (Deutsch)</option>
             </select>
             Title:
 
@@ -49,7 +49,12 @@
             ?>
 
             </div>
-            <?php $user = $_SESSION["user"]; echo "<input type='hidden' id='user' value='$user'>"; ?>
+            <?php 
+            $user = $_SESSION["user"];
+            echo "<input type='hidden' id='user' value='$user'>";
+            $id = $_GET["i"];
+            echo "<input type='hidden' id='id'   value='$id'>";
+            ?>
 
             <button onclick="add()">+</button>
             <button onclick="edit()">Save</button>

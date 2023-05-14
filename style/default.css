@@ -13,6 +13,23 @@ h2 {
     box-sizing: border-box;
 }
 
+.sidebar {
+    width: calc(15% - 36px);
+    height: calc(100% - 104px);
+    padding: 15px;
+    margin: 80px 12px 24px calc(24px + 10%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.main {
+    width: calc(65% - 36px);
+    margin: 80px calc(24px + 10%) 24px 12px;
+    display: inline-block;
+}
+
 button {
     height: 30px;
     background-color: #2484d3;

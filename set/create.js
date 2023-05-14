@@ -17,8 +17,9 @@ function get_val(id) {
     return encodeURIComponent(document.getElementById(id).value);
 }
 
-function save(base_address) {
+function save(base_address, arg="") {
     address = base_address+"?n="+get_val("al-title")+"&l="+get_val("lang")+"&u="+get_user();
+    address = address+"&"+arg;
     i = document.getElementById("box").children;
     for (x = 0; x < i.length; x ++) {
         address += "&";
@@ -42,7 +43,9 @@ function check() {
 
 function edit() {
     if (document.getElementById("al-title").value == "") {return;}
-    location.assign(save("http://aceling.wz.cz/set/save_edit.php"));
+    id = document.getElementById("id").value
+    alert(id);
+    location.assign(save("http://aceling.wz.cz/set/save_edit.php", "i="+id));
 }
 
 
