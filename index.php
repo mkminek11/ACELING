@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> <!-- Globe icon -->
         <link rel="stylesheet" href="http://aceling.wz.cz/style/form.css">
         <link rel="stylesheet" href="http://aceling.wz.cz/style/all.css">
+        <meta name="color-scheme" content="light only">
     </head>
     <body>
         <div class="earth-bg"></div>

@@ -9,6 +9,9 @@
         <?php
             include_once("$_SERVER[DOCUMENT_ROOT]/insert.inc");
             insert_list($_SESSION);
+            $user = $_SESSION["user"];
+            $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
+            $user_data = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `users` WHERE id='$user'"));
         ?>
         <div class="sidebar">
             <ul>
@@ -17,11 +20,12 @@
             </ul>
         </div>
         <div class="main content">
-            <form class="notebook" action="save_settings.php" method="GET" id="s-notebook">
+            <form class="notebook" action="save_settings.php" method="post" id="s-notebook">
                 
                 <!----------------------------------  profile settings  -------------------------------------->
                 <div class="section" id="s-profile">
                     <h1>Profile settings:</h1>
+                    <p><label>Email:<input type="text" id="email" name="email" value="<?php echo $user_data["email"]; ?>"></label></p>
                     <button onclick='window.location.assign("http:\/\/aceling.wz.cz/account/change_password.php")'>Change password</button>
                     <button onclick='if(confirm("Do you really want to delete your account?")){location.assign("http:\/\/aceling.wz.cz/account/delete.php")}'>Delete account</button>
                 </div>
@@ -29,8 +33,8 @@
                 <!---------------------------------  appearance settings  ------------------------------------>
                 <div class="section" id="s-appearance">
                     <h1>Appearance settings:</h1>
-                    <p><label>Language:<select id="language">
-                        <option selected>English</option>
+                    <p><label>Language:<select id="display-language" name="display-language">
+                        <option value="en" selected>English</option>
                         <optgroup label="Sorry, there are no other available languages yet."></optgroup>
                     </select></label></p>
                     <p><label><input type="checkbox" id="dark-mode" name="dark-mode" value="1">Dark mode</label></p>

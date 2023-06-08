@@ -14,7 +14,7 @@ function insert_list($session) {
     echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
         <link rel="stylesheet" href="http://aceling.wz.cz/style/navigation.css">
         <div id="navigation"><nav>
-            <div><a href="http://aceling.wz.cz/home.php"><img src="http://aceling.wz.cz/images/logo.png" class="nav-logo"></a></div>
+            <div><a href="http://aceling.wz.cz/home.php"><img src="http://aceling.wz.cz/images/logo-normal.png" class="nav-logo"></a></div>
 
             <div><a href="http://aceling.wz.cz/home.php">       <span class="nav-text">Home     </span> <span class="material-symbols-rounded nav-icon">home</span>       </a></div>
             <div><a href="http://aceling.wz.cz/search.php">     <span class="nav-text">Search   </span> <span class="material-symbols-rounded nav-icon">search</span>     </a></div>

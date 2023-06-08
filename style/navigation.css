@@ -21,6 +21,7 @@ nav div {
     margin-right: 10px;
     height: 24px;
     flex: 1;
+    position: relative;
 }
 
 nav div a {
@@ -86,3 +87,14 @@ nav div a img {
         display: initial;
     }
 }
+
+/* @media (prefers-color-scheme: dark) {
+    nav {
+        background-color: #333333;
+        color: #DDDDDD;
+    }
+    
+    nav div a {
+        color: #DDDDDD;
+    }
+} */

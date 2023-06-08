@@ -27,10 +27,12 @@
             
             <?php
             $id = $_GET["i"];
-            
+
             $conn = mysqli_connect("sql6.webzdarma.cz", "acelingwzcz6315", "Password 1", "acelingwzcz6315");
             $set = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM `sets` WHERE id='$id'"));
             $words = json_decode($set["data"]);
+            
+            if ($_SESSION["user"] != $set["creator"]) {header("Location: http://aceling.wz.cz/home.php", true, 301);}
             
             $title = $set["name"];
             
